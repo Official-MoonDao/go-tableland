@@ -9,7 +9,7 @@
         "TLSKey": "${VALIDATOR_TLS_KEY}"
     },
     "Gateway": {
-        "ExternalURIPrefix": "https://testnets.tableland.network",
+        "ExternalURIPrefix": "http://localhost",
         "MetadataRendererURI": "https://tables.testnets.tableland.xyz",
         "AnimationRendererURI": "https://tables.testnets.tableland.xyz"
     },
@@ -56,7 +56,7 @@
             "Name": "Ethereum Sepolia",
             "ChainID": 11155111,
             "Registry": {
-                "EthEndpoint": "wss://eth-sepolia.g.alchemy.com/v2/${VALIDATOR_ALCHEMY_ETHEREUM_SEPOLIA_API_KEY}",
+                "EthEndpoint": "https://11155111.rpc.thirdweb.com/${THIRDWEB_TOKEN}",
                 "ContractAddress": "0xc50C62498448ACc8dBdE43DA77f8D5D2E2c7597D"
             },
             "EventFeed": {
@@ -70,101 +70,6 @@
                 "DedupExecutedTxns": true
             },
             "HashCalculationStep": 150
-        },
-        {
-            "Name": "Polygon Amoy",
-            "ChainID": 80002,
-            "Registry": {
-                "EthEndpoint": "wss://polygon-amoy.g.alchemy.com/v2/${VALIDATOR_ALCHEMY_POLYGON_AMOY_API_KEY}",
-                "ContractAddress": "0x170fb206132b693e38adFc8727dCfa303546Cec1"
-            },
-            "EventFeed": {
-                "ChainAPIBackoff": "15s",
-                "NewBlockPollFreq": "5s",
-                "MinBlockDepth": 1,
-                "PersistEvents": true
-            },
-            "EventProcessor": {
-                "BlockFailedExecutionBackoff": "10s",
-                "DedupExecutedTxns": true
-            },
-            "HashCalculationStep": 360
-        },
-        {
-            "Name": "Arbitrum Sepolia",
-            "ChainID": 421614,
-            "Registry": {
-                "EthEndpoint": "wss://arb-sepolia.g.alchemy.com/v2/${VALIDATOR_ALCHEMY_ARBITRUM_SEPOLIA_API_KEY}",
-                "ContractAddress": "0x223A74B8323914afDC3ff1e5005564dC17231d6e"
-            },
-            "EventFeed": {
-                "ChainAPIBackoff": "15s",
-                "NewBlockPollFreq": "5s",
-                "MinBlockDepth": 0,
-                "PersistEvents": true
-            },
-            "EventProcessor": {
-                "BlockFailedExecutionBackoff": "10s",
-                "DedupExecutedTxns": true
-            },
-            "HashCalculationStep": 360
-        },
-        {
-            "Name": "Optimism Sepolia",
-            "ChainID": 11155420,
-            "Registry": {
-                "EthEndpoint": "wss://opt-sepolia.g.alchemy.com/v2/${VALIDATOR_ALCHEMY_OPTIMISM_SEPOLIA_API_KEY}",
-                "ContractAddress": "0x68A2f4423ad3bf5139Db563CF3bC80aA09ed7079"
-            },
-            "EventFeed": {
-                "ChainAPIBackoff": "15s",
-                "NewBlockPollFreq": "5s",
-                "MinBlockDepth": 0,
-                "PersistEvents": true
-            },
-            "EventProcessor": {
-                "BlockFailedExecutionBackoff": "10s",
-                "DedupExecutedTxns": true
-            },
-            "HashCalculationStep": 1800
-        },
-        {
-            "Name": "Base Sepolia",
-            "ChainID": 84532,
-            "Registry": {
-                "EthEndpoint": "wss://base-sepolia.g.alchemy.com/v2/${VALIDATOR_ALCHEMY_BASE_SEPOLIA_API_KEY}",
-                "ContractAddress": "0xA85aAE9f0Aec5F5638E5F13840797303Ab29c9f9"
-            },
-            "EventFeed": {
-                "ChainAPIBackoff": "15s",
-                "NewBlockPollFreq": "5s",
-                "MinBlockDepth": 0,
-                "PersistEvents": true
-            },
-            "EventProcessor": {
-                "BlockFailedExecutionBackoff": "10s",
-                "DedupExecutedTxns": true
-            },
-            "HashCalculationStep": 1800
-        },
-        {
-            "Name": "Filecoin Calibration",
-            "ChainID": 314159,
-            "Registry": {
-                "EthEndpoint": "https://api.calibration.node.glif.io/rpc/v1",
-                "ContractAddress": "0x030BCf3D50cad04c2e57391B12740982A9308621"
-            },
-            "EventFeed": {
-                "ChainAPIBackoff": "15s",
-                "NewBlockPollFreq": "15s",
-                "MinBlockDepth": 5,
-                "PersistEvents": true
-            },
-            "EventProcessor": {
-                "BlockFailedExecutionBackoff": "10s",
-                "DedupExecutedTxns": true
-            },
-            "HashCalculationStep": 60
         }
     ]
 }
