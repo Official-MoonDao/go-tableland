@@ -155,6 +155,15 @@ func (ep *EventProcessor) startDaemon() error {
 	ctx, cls := context.WithTimeout(ep.daemonCtx, time.Second*10)
 	defer cls()
 	fromHeight, err := ep.executor.GetLastExecutedBlockNumber(ctx)
+	// Index from 1 block before the earliest MoonDAO tableland contract deployments
+	// On arbitrum, 0xabD8D3693439A72393220d87aee159952261Ad1f (Distributions)
+	// On sepolia, 0x17729AFF287d9873F5610c029A5Db814e428e97a (Project)
+	chainIdToStartBlock := map[int]int64{
+        11155111 :  int64(7436870), // sepolia
+		42161: int64(262112230), // arbitrum
+    }
+    fromHeight = chainIdToStartBlock[ep.ChainID]
+
 	if err != nil {
 		return fmt.Errorf("get last executed block number: %s", err)
 	}
